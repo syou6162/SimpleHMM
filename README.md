@@ -7,15 +7,15 @@ To practice writing codes about Forward-Backward Algorithm.
 Implemented three algorithm including viterbi, forward(backward), and forward-backward algorithm.
 
 # Usage
-  ./wscript configure
-  ./wscript build
+	./wscript configure
+	./wscript build
   
 # Example
-  # simple viterbi example
-  ./build/default/src/simple_hmm_example 
-  wget http://www.phontron.com/data/nonparametric-exercise-ja-1.tar.gz
-  tar zxvf nonparametric-exercise-ja-1.tar.gz
-  mv nonparametric-exercise-ja-1 data
+	# simple viterbi example
+	./build/default/src/simple_hmm_example 
+	wget http://www.phontron.com/data/nonparametric-exercise-ja-1.tar.gz
+	tar zxvf nonparametric-exercise-ja-1.tar.gz
+	mv nonparametric-exercise-ja-1 data
   
 
 # TODO
