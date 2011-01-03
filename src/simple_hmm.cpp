@@ -7,6 +7,8 @@
 #include <algorithm>
 #include <boost/foreach.hpp>
 #include "SimpleHMM.hpp"
+DEFINE_int32(N, 10, "Number of hidden state");
+DEFINE_string(DATA, "data/wiki-sample.word", "Data file");
 
 int main(int argc, char *argv[]) {
   google::InitGoogleLogging(*argv);
@@ -16,9 +18,8 @@ int main(int argc, char *argv[]) {
   SimpleHMM hmm;
   SimpleHMM::Observation o;
   
-  hmm.read("nonparametric-exercise-ja-1/wiki-sample.word", o, true);
-
-  hmm.train(10);
+  hmm.read(FLAGS_DATA, o, true);
+  hmm.train(FLAGS_N);
 
   hmm.forward_backward(o);
   hmm.viterbi(o);

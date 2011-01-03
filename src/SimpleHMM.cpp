@@ -371,27 +371,8 @@ void SimpleHMM::viterbi(const Observation& o) {
 	q_hat[t] = psi[t+1][q_hat[t+1]];
   }
 
-  std::map<int, std::string> id2str;
-  std::string filename = "nonparametric-exercise-ja-1/id_to_string.txt";
-  std::ifstream ifs(filename.c_str());
-  if (!ifs.is_open()) {
-	LOG(FATAL) << filename << ": cannot open" << std::endl ;
-  } else {
-	LOG(INFO) << "Start reading: " << filename << std::endl;
-  }
-
-  std::string line;
-  while (getline(ifs, line)) {
-	std::istringstream istrs((char*)line.c_str());
-	int id = 0;
-	std::string term = "";
-	istrs >> id;
-	istrs >> term;
-	id2str[id - 1] = term;
-  }
-
   for(int t = 0; t < T; t++) {
-	std::cout << id2str[o[t]] << "/" << q_hat[t] << " ";
+	std::cout << _id2word[o[t]] << "/" << q_hat[t] << " ";
   }
   std::cout << std::endl;
   LOG(ERROR) << "p_hat: " << exp(log_p_hat) << std::endl;
