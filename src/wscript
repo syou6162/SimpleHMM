@@ -1,0 +1,19 @@
+def build(bld):
+  bld(features = 'cxx cstaticlib',
+      source = 'util.cpp',
+      target = 'util',
+      includes = ['.'],
+      lib = ['gflags', 'glog'])
+
+  bld(features = 'cxx cstaticlib',
+      source = 'SimpleHMM.cpp',
+      target = 'SimpleHMM',
+      includes = ['util'],
+      lib = ['gflags', 'glog'])
+
+  bld(features = 'cxx cprogram',
+      source = 'simple_hmm.cpp',
+      target = 'simple_hmm',
+      includes = ['.'],
+      uselib_local = ['util', 'SimpleHMM'],
+      lib = ['gflags', 'glog'])
