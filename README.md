@@ -26,6 +26,10 @@ Implemented three algorithm including viterbi, forward(backward), and forward-ba
 	./grade-bayes-hmm.pl gold.txt result.txt
 
 # Experimental Result
+Setting as follows:
+* Number of hidden state = 30
+* Number of iteration = 200
+* Training data and test data are same data(For simplicity).
 ![Accuracy](https://img.skitch.com/20110103-1cadfm6mwr951efncx27654mfi.jpg)
 ![Log Likelihood](https://img.skitch.com/20110103-84cfp3r63m3f9dewa19p4xikkx.jpg)
 
