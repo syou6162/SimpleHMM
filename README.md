@@ -9,8 +9,10 @@ Implemented three algorithm including viterbi, forward(backward), and forward-ba
 # Usage
   ./wscript configure
   ./wscript build
-
+  
 # Example
+  # simple viterbi example
+  ./build/default/src/simple_hmm_example 
   wget http://www.phontron.com/data/nonparametric-exercise-ja-1.tar.gz
   tar zxvf nonparametric-exercise-ja-1.tar.gz
   mv nonparametric-exercise-ja-1 data
